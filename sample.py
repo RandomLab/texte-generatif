@@ -3,6 +3,12 @@ from random import randint
 import spacy
 
 def generate(net):
+    """
+    generate text with seeds and trained model
+    args:
+        model (bin)
+    """
+
     nlp = spacy.load('fr_core_news_sm')
     
     net.cuda()
@@ -40,6 +46,16 @@ def generate(net):
 
 def sample(net, size, prime='The', top_k=None, cuda=False):
     
+    """
+    generate text with seeds and trained model
+    args:
+        model (bin)
+        hidden size (torch)
+        prime (str)
+        top_k (int)
+        cuda (bool)
+    """
+    
     if cuda:
         net.cuda()
     else:
@@ -67,7 +83,9 @@ def sample(net, size, prime='The', top_k=None, cuda=False):
     return ''.join(chars)
 
 def predict(net):
-
+    """
+    sample model during training (don't work)
+    """
     net.eval()
 
     h = net.init_hidden(1)

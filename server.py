@@ -3,9 +3,16 @@ from model import *
 from sample import *
 import sys, time, json
 
+# rest api to generate text
+
 app = Flask(__name__)
 
 def load_model(path):
+    """
+    load trained model
+    args:
+        path (str)
+    """
     with open(path, 'rb') as file:
                     checkpoint = torch.load(file)                   
                     loaded = CharRNN(checkpoint['tokens'], 
@@ -14,8 +21,16 @@ def load_model(path):
                     loaded.load_state_dict(checkpoint['state_dict'])
                     return loaded
 
-@app.route('/', methods=['GET'])
-def main():
+@app.route('/')
+def home():
+    return 'go to /rnn for text generation with char rnn with pytorch, /markov for text generation with markov chain '
+
+@app.route('/rnn', methods=['GET'])
+def rnn():
+    """
+    generate text
+    return json with date/text
+    """
     if len(sys.argv) > 1:
         path = sys.argv[1]
         model = load_model(path)
@@ -29,6 +44,10 @@ def main():
         return json.dumps(data) 
     else:
         print("Usage : python server.py backup/rnn_100_epoch_fr_256_120_4.net")
+
+@app.route('/markov', methods=['GET'])
+def markov():
+    pass
 
 if __name__ == '__main__':
     app.run(debug = True)

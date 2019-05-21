@@ -5,6 +5,15 @@ import time, sys
 from time import sleep
 
 def main():
+
+    """
+    run text generation with trained model (.net)
+    args:
+        path (str)
+    
+    print str
+    """
+
     if len(sys.argv) > 1:
 
         path = sys.argv[1]

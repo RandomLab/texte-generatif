@@ -10,6 +10,8 @@ class FormatData():
     merge corpus of text files into one input for RNN
     args : 
         path (str) : path of the corpus
+    
+    save file data/input.txt
     """
 
     nlp = spacy.load('fr_core_news_sm')

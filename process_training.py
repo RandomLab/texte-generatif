@@ -5,6 +5,17 @@ from model import *
 from train import *
 
 def main():
+    """
+    process training with dataset data/input.txt
+    args:
+        model name (str)
+        number of epochs (int)
+        number of steps (int)
+        number of sequences (int)
+        numbers of layers (int)
+        dropout (float)
+    """
+
     if len(sys.argv) > 6 :
 
         model_name = sys.argv[1]

@@ -1,4 +1,4 @@
-# This script outputs relevant system environment info
+# This script outputs relevant system environment info for pytorch/nvidia config
 # Run it with `python collect_env.py`.
 from __future__ import absolute_import, division, print_function, unicode_literals
 import re
