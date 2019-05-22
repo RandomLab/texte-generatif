@@ -50,4 +50,5 @@ def markov():
     pass
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    # change server ip to access through network
+    app.run(debug = True, host='192.168.5.130')
