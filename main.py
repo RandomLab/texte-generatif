@@ -26,6 +26,7 @@ def main():
                             n_layers=checkpoint['n_layers'])
 
             loaded.load_state_dict(checkpoint['state_dict'])
+            print(loaded)
 
         try:
             with open('backup/text/' + time.asctime(time.localtime(time.time())) + '.txt', 'a') as file:
