@@ -41,7 +41,7 @@ def rnn():
             'date' : date,
             'text' : text
         }
-        return json.dumps(data) 
+        return json.dumps(data, ensure_ascii=False).encode('utf8')
     else:
         print("Usage : python server.py backup/rnn_100_epoch_fr_256_120_4.net")
 
