@@ -1,1 +1,0 @@
-Epoch: 100/100... Step: 12600... Loss: 1.0891... Val Loss: 1.2777 --> model saved as rnn_100_256_120_4_0.6.net
